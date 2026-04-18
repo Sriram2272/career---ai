@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 220 20% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 10%;
+
+    --primary: 24 95% 53%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 30 97% 62%;
+
+    --secondary: 220 13% 96%;
+    --secondary-foreground: 220 9% 46%;
+
+    --muted: 220 13% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 24 95% 53%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 24 95% 53%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 220 14% 96%;
+    --sidebar-foreground: 220 9% 46%;
+    --sidebar-primary: 24 95% 53%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 24 95% 96%;
+    --sidebar-accent-foreground: 220 20% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 24 95% 53%;
+
+    --surface: 220 14% 96%;
+    --surface-hover: 220 13% 93%;
+    --hover-accent: 30 97% 72%;
+    --status-approved: 152 60% 40%;
+    --status-pending: 24 95% 53%;
+    --status-rejected: 0 72% 51%;
+
+    --glass-bg: 0 0% 100% / 0.7;
+    --glass-border: 0 0% 100% / 0.3;
+  }
+
+  .dark {
+    --background: 220 15% 6%;
+    --foreground: 220 13% 93%;
+
+    --card: 220 15% 10%;
+    --card-foreground: 220 13% 93%;
+
+    --popover: 220 15% 10%;
+    --popover-foreground: 220 13% 93%;
+
+    --primary: 24 95% 53%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 30 97% 62%;
+
+    --secondary: 220 15% 14%;
+    --secondary-foreground: 220 9% 75%;
+
+    --muted: 220 15% 16%;
+    --muted-foreground: 220 9% 55%;
+
+    --accent: 24 95% 53%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 15% 18%;
+    --input: 220 15% 18%;
+    --ring: 24 95% 53%;
+
+    --sidebar-background: 220 15% 8%;
+    --sidebar-foreground: 220 9% 55%;
+    --sidebar-primary: 24 95% 53%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 15% 12%;
+    --sidebar-accent-foreground: 220 13% 93%;
+    --sidebar-border: 220 15% 16%;
+    --sidebar-ring: 24 95% 53%;
+
+    --surface: 220 15% 12%;
+    --surface-hover: 220 15% 15%;
+    --hover-accent: 30 97% 72%;
+    --status-approved: 160 65% 45%;
+    --status-pending: 24 95% 53%;
+    --status-rejected: 0 72% 51%;
+
+    --glass-bg: 220 15% 10% / 0.7;
+    --glass-border: 220 15% 20% / 0.3;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  .font-serif-body {
+    font-family: 'Manrope', system-ui, sans-serif;
+    font-weight: 500;
+  }
+
+  .stat-number {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+  }
+}
+
+@layer utilities {
+  .card-border {
+    border: 1px solid hsl(var(--border));
+  }
+
+  .card-accent-left {
+    border-left: 3px solid hsl(var(--primary));
+  }
+
+  .surface-elevated {
+    background-color: hsl(var(--surface));
+  }
+
+  .card-shadow {
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.04), 0 1px 2px -1px rgb(0 0 0 / 0.04);
+  }
+
+  .card-shadow-hover {
+    box-shadow: 0 4px 12px 0 rgb(0 0 0 / 0.06), 0 2px 4px -1px rgb(0 0 0 / 0.04);
+  }
+
+  .glass {
+    background: hsl(var(--glass-bg));
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid hsl(var(--glass-border));
+  }
+
+  .gradient-primary {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .shadow-glow {
+    box-shadow: 0 0 20px -5px hsl(var(--primary) / 0.3);
+  }
+
+  .shadow-glow-lg {
+    box-shadow: 0 0 40px -10px hsl(var(--primary) / 0.4);
+  }
+}
+
+@layer components {
+  .login-bg-pattern {
+    background-image:
+      radial-gradient(ellipse at 20% 50%, hsl(var(--primary) / 0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, hsl(var(--primary-glow) / 0.06) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 80%, hsl(24 95% 53% / 0.04) 0%, transparent 50%);
+  }
+}
