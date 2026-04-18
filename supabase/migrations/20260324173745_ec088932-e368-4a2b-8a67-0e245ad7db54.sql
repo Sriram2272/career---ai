@@ -1,0 +1,2 @@
+ALTER TABLE public.achievements DROP CONSTRAINT achievements_student_id_fkey;
+ALTER TABLE public.achievements ADD CONSTRAINT achievements_student_id_profiles_fkey FOREIGN KEY (student_id) REFERENCES public.profiles(id) ON DELETE CASCADE;
